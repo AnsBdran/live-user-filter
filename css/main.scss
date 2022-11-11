@@ -22,7 +22,8 @@ main {
                 width: clamp(200px, 70%, 500px);
                 height: 3rem;
                 background-color: darken($color: $bg, $amount: 20%);
-                color: #fff;
+                // color: #fff;
+                color: #333;
                 font-size: 1.4rem;
                 padding: $sm-pd;
                 border-radius: $radius;
@@ -44,6 +45,7 @@ main {
             .show {
                 background-color: darken($color: $bg, $amount: 20%);
                 color: #fff;
+                color: #333;
                 width: clamp(200px, 70%, 500px);
                 min-height: 3rem;
                 border-radius: $radius;
@@ -128,4 +130,8 @@ footer {
         text-align: center;
         margin-bottom: $lg-mg;
     }
+}
+
+::placeholder {
+    color: #555;
 }

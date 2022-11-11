@@ -98,7 +98,7 @@ main section .search-form input {
   width: clamp(200px, 70%, 500px);
   height: 3rem;
   background-color: #788dd8;
-  color: #fff;
+  color: #333;
   font-size: 1.4rem;
   padding: 0.4em 0.8em;
   border-radius: 15px;
@@ -119,6 +119,7 @@ main section .results {
 main section .results .show {
   background-color: #788dd8;
   color: #fff;
+  color: #333;
   width: clamp(200px, 70%, 500px);
   min-height: 3rem;
   border-radius: 15px;
@@ -197,6 +198,10 @@ main section .results .user .text p.email span {
 footer p {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+::placeholder {
+  color: #555;
 }
 
 /*# sourceMappingURL=main.css.map */
