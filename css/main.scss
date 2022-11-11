@@ -1,0 +1,131 @@
+@use "./sass" as *;
+
+header {
+    h1 {
+        padding: $md-pd;
+        text-align: center;
+    }
+}
+
+main {
+    width: clamp(200px, 90%, 900px);
+    margin: $lg-mg auto;
+
+    section {
+        margin: 0 auto;
+
+        .search-form {
+            input {
+                display: block;
+                margin-inline: auto;
+                margin-top: $md-mg;
+                width: clamp(200px, 70%, 500px);
+                height: 3rem;
+                background-color: darken($color: $bg, $amount: 20%);
+                color: #fff;
+                font-size: 1.4rem;
+                padding: $sm-pd;
+                border-radius: $radius;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            h3 {
+                text-align: center;
+            }
+        }
+
+        .results {
+            margin-top: $md-mg;
+            @include grid;
+
+            .show {
+                background-color: darken($color: $bg, $amount: 20%);
+                color: #fff;
+                width: clamp(200px, 70%, 500px);
+                min-height: 3rem;
+                border-radius: $radius;
+                font-size: 1.5rem;
+                transition: 0.3s;
+                margin-inline: auto;
+                &:hover {
+                    background-color: darken($color: $bg, $amount: 30%);
+                }
+                &:active {
+                    box-shadow: inset 1px 1px 15px darken($color: $bg, $amount: 50%);
+                }
+            }
+
+            .user {
+                @include flex(start, start);
+                gap: $tiny-mg;
+                box-shadow: 1px 1px 4px darken($color: $bg, $amount: 50%);
+                border-radius: 5px;
+
+                &.hide {
+                    display: none;
+                }
+
+                img {
+                    border-radius: 5px 0 0 5px;
+                }
+
+                .text {
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    @include flex(space-between, stretch, column, 0);
+                    padding: $tiny-mg 0;
+
+                    p {
+                        small {
+                            font-size: 0.7rem;
+                            color: lighten($color: $text, $amount: 15%);
+                        }
+
+                        &.email {
+                            font-size: 0.9rem;
+                            position: absolute;
+                            background-color: darken($color: $bg, $amount: 10%);
+                            padding: $md-pd;
+                            right: 0;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+
+                            span {
+                                @include center;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.user {
+    position: relative;
+    .email {
+        display: none;
+    }
+    &:hover {
+        .email {
+            display: block;
+        }
+    }
+}
+
+footer {
+    p {
+        text-align: center;
+        margin-bottom: $lg-mg;
+    }
+}

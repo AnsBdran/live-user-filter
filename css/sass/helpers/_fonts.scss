@@ -1,0 +1,224 @@
+// fonts sizes
+// $fs-xl: 3rem;
+// $fs-600: 1.5rem;
+// $fs-500: 1.25rem;
+// $fs-400: 1rem;
+
+// ||||||||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||||||||
+
+// font sizes function
+// font-size: clamp([min]rem, [v]vw + [r]rem, [max]rem);
+
+//
+// y = (v*x)/100 + r
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// x — current viewport width value (px).
+// y — resulting fluid font size for a current viewport width value x (px).
+// v — viewport width value that affects fluid value change rate (vw).
+// r — relative size equal to browser font size. Default value is 16px.
+// ||||||||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||||||||
+
+:root {
+  --fs-xl: 3rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  /* font-sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+}
+
+// ||||||||||||||||||||||||||||||||||||||||
+// ||||||||||||||||||||||||||||||||||||||||
+$fs-900: 9.375rem;
+$fs-800: 6.25rem;
+$fs-700: 3.5rem;
+$fs-600: 2rem;
+$fs-500: 1.75rem;
+$fs-400: 1.125rem;
+$fs-300: 1rem;
+$fs-200: 0.875rem;
+
+// h1 {
+//   font-size: clamp($fs-600, 4vw + 1rem, $fs-700);
+// }
+
+// h2 {
+//   font-size: $fs-500;
+// }
+
+// h3 {
+//   font-size: $fs-400;
+// }
+
+// p {
+//   font-size: clamp($fs-400, 2vw + 1rem, $fs-500);
+// }
+
+// from codepen
+
+h1 {
+  $min: 2rem; // minimum value
+  $val: 5vw; // preferred value = 5% viewport width
+  $max: 3rem; // maximum value$
+  font-size: clamp($min, $val, $max);
+}
+h2 {
+  $min: 1.5rem; /* minimum value */
+  $val: 4vw; /* preferred value = 4% viewport width */
+  $max: 2.25rem; /* maximum value */
+  font-size: clamp($min, $val, $max);
+}
+h3 {
+  $min: 1.2rem; /* minimum value */
+  $val: 4vw; /* preferred value = 4% viewport width */
+  $max: 1.6rem; /* maximum value */
+  font-size: clamp($min, $val, $max);
+}
+h4 {
+  $min: 0.8rem; /* minimum value */
+  $val: 4vw; /* preferred value = 4% viewport width */
+  $max: 1.1rem; /* maximum value */
+  // font-size: clamp($min, $val, $max);
+}
+p {
+  $min: 1rem; // minimum value
+  $val: 2.5vw; // preferred value = 2.5% viewport width
+  $max: 1.4rem; // maximum value
+  font-size: clamp($min, $val, $max);
+}
+
+// h1,
+// h2,
+// p {
+//   // Font minimum, preferred and maximum value
+//   font-size: clamp($min, $val, $max);
+// }
+
+// font solutions
+
+// // Technique #1: Clamp (no media querys needed)
+// .technique--clamp {
+//   h1,
+//   h2,
+//   p {
+//     // Font minimum, preferred and maximum value
+//     font-size: clamp(var(--min), var(--val), var(--max));
+//   }
+
+//   // Font size variables
+//   h1 {
+//     --min: 2em; // minimum value
+//     --val: 5vw; // preferred value = 5% viewport width
+//     --max: 3em; // maximum value
+//   }
+//   h2 {
+//     --min: 1.5em; /* minimum value */
+//     --val: 4vw; /* preferred value = 4% viewport width */
+//     --max: 2.25em; /* maximum value */
+//   }
+//   p {
+//     --min: 1em; // minimum value
+//     --val: 2.5vw; // preferred value = 2.5% viewport width
+//     --max: 1.5em; // maximum value
+//   }
+// }
+
+// // Technique #2: Multiplier
+// .technique--multiplier {
+//   // Font size multiplier variable
+//   --text-multiplier: 1;
+
+//   // Increase the multiplier on bigger screens
+//   @media (min-width: 48rem) {
+//     --text-multiplier: 1.5;
+//   }
+
+//   h1 {
+//     // Fonts size * multiplier
+//     font-size: calc(2em * var(--text-multiplier));
+//   }
+
+//   h2 {
+//     font-size: calc(1.5em * var(--text-multiplier));
+//   }
+
+//   p {
+//     // Fonts size * multiplier
+//     font-size: calc(1em * var(--text-multiplier));
+//   }
+// }
+
+// // Technique #3: Old school
+// .technique--og {
+//   h1 {
+//     font-size: 2em;
+//   }
+
+//   h2 {
+//     font-size: 1.5em;
+//   }
+
+//   p {
+//     font-size: 1em;
+//   }
+
+//   // Increase font sizes on bigger screens
+//   @media (min-width: 48rem) {
+//     h1 {
+//       font-size: 3em;
+//     }
+
+//     h2 {
+//       font-size: 2.25em;
+//     }
+
+//     p {
+//       font-size: 1.5em;
+//     }
+//   }
+// }
+
+// //------------------------------//
+// // Base styles for demo purposes
+// //------------------------------//
+// @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro&display=swap");
+
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
+// body {
+//   display: grid;
+//   place-content: center;
+//   padding: 1.5em;
+//   max-width: 720px;
+//   margin: auto;
+// }
+// h1,
+// h2 {
+//   font-family: "Merriweather", serif;
+// }
+// p {
+//   font-family: "Source Sans Pro", sans-serif;
+// }
+// .text--grey {
+//   color: hsl(0, 0%, 65%);
+// }
+
+// [class*="technique--"] > * + * {
+//   margin: 1em 0 .25em;
+// }
+
+// hr {
+//   margin: 2em 0;
+// }

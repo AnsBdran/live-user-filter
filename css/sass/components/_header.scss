@@ -1,0 +1,18 @@
+@use "../helpers/" as *;
+
+// .header {
+//   @include flex(space-between, center);
+//   &__logo {
+//     @include flex();
+//   }
+//   &__nav {
+//     @include flex;
+//     gap: 0.5em;
+//     & a {
+//       padding: $sm-pd;
+//     }
+//   }
+//   & .hamburger {
+//     display: none;
+//   }
+// }

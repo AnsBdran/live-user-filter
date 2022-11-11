@@ -1,0 +1,76 @@
+@use "./vars" as *;
+
+@mixin overlay($color, $opacity) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $opacity);
+}
+
+@mixin box-shadow($x, $y) {
+  box-shadow: $x, $y, 15px #000;
+}
+
+// Prefixes mixin, add prefixes automatically to props
+@mixin prefixer($prop, $val, $prefixes: (moz, webkit, o, ms)) {
+  @each $prefix in $prefixes {
+    // -#{$prefix}-$prop: $val;
+    #{"-" + $prefix + "-" + $prop}: $val;
+  }
+  #{$prop}: $val;
+}
+
+// keyframes mixin, auto add prefixes to keyframes definition
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{name} {
+    @content;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin btn($width: 5rem) {
+  width: $width;
+  // height: $height;
+  background-color: $alt-bg;
+  color: $alt-text;
+  font-size: 1.1em;
+  &:hover {
+    box-shadow: inset 0.5px 1px 6px 3px #463939;
+    // background: none;
+    // color: $text;
+  }
+}
+
+@mixin flex($jus: space-between, $align: center, $dir: row, $gap: $sm-mg) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  // grid-template-columns: repeat(4, max-content);
+  gap: $sm-mg;
+  justify-content: center;
+  // justify-items: center;
+}
