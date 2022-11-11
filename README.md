@@ -8,4 +8,4 @@ I built it using:
 - ### `SCSS`
 - ### `TypeScript`
 
-## see this small project [Live from here](https://github.com/AnsBdran/live-user-filter)
+## see this small project [Live from here](https://ansbdran.github.io/live-user-filter/)
